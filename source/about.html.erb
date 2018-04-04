@@ -1,0 +1,24 @@
+---
+title: Welcome to Middleman
+---
+
+<div class="container no-pad-bot">
+  <div class="row center-align">
+    <div class="col l12">
+      <%= data.about.desc %>
+    </div>
+  </div>
+  <div class="row">
+    <% data.about.teams.each do |team| %>
+    <div class="col l4">
+      <div class="box center-align">
+        <%= image_tag(team.pic, class: 'responsive-img') %>
+        <div class="team-text">
+          <p class="name"><%= team.name %></p>
+          <p class="position"><%= team.position %></p>
+        </div>
+       </div>
+    </div>
+    <% end %>
+  </div>
+</div>
