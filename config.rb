@@ -13,7 +13,18 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
-activate :livereload
+# Reload the browser automatically whenever files change
+configure :development do
+  activate :livereload
+end
+
+activate :sprockets
+
+if defined? RailsAssets
+  RailsAssets.load_paths.each do |path|
+    sprockets.append_path path
+  end
+end
 
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
